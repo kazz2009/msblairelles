@@ -116,7 +116,7 @@
     </chaturbate-controller>
 
     <paper-spinner active$="{{!ready}}"></paper-spinner>
-    <paper-toast id="toast" vertical-align="bottom" duration="10000"></paper-toast>
+    <paper-toast id="toast" vertical-align="top" duration="5000"></paper-toast>
     <chaturbate-chat items="{{chat}}"></chaturbate-chat>
     <chaturbate-hearts id="hearts"></chaturbate-hearts>
     <chaturbate-info view-count="{{viewCount}}"></chaturbate-info>
@@ -170,7 +170,7 @@
       _handleTip(e) {
         this.$.hearts.show(e.detail);
 
-        if (e.detail.amount >= 100) {
+        if (e.detail.amount >= 1) {
           this.$.toast.text =
               `${e.detail.user.username} tipped ${e.detail.amount} tokens!`;
           this.$.toast.open();
