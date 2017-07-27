@@ -12,7 +12,7 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0",
     "chaturbate-controller": "https://github.com/paulallen87/polymer-chaturbate-controller.git",
     "chaturbate-chat": "https://github.com/paulallen87/polymer-chaturbate-chat.git",
-    "chaturbate-hearts": "https://github.com/paulallen87/polymer-chaturbate-hearts.git",
+    "chaturbate-hearts": "https://github.com/kazz2009/ch-hearts.git",
     "chaturbate-info": "https://github.com/paulallen87/polymer-chaturbate-info.git",
     "chaturbate-subject": "https://github.com/paulallen87/polymer-chaturbate-subject.git",
     "paper-spinner": "PolymerElements/paper-spinner#^2.0.0",
