@@ -42,7 +42,12 @@
     <paper-toast id="toast" vertical-align="top" duration="5000"></paper-toast>
     <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autostart="false" ></audio>
   </template>
-
+<script>
+  function playSound() {
+          var sound = document.getElementById("audio");
+          sound.play();
+      }
+</script>
   <script>
     class ViewDefaultTip extends Polymer.Element {
       static get is() { return 'view-default-tip'; }
@@ -52,10 +57,7 @@
           subrouteData: Object,
         };
       }
-  function playSound() {
-          var sound = document.getElementById("audio");
-          sound.play();
-      }
+
       _handleTip(e) {
         if (e.detail.amount >= 1) {
           this.$.toast.text =
