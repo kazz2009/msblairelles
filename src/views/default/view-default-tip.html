@@ -9,6 +9,7 @@
       :host {
         display: block;
         padding: 10px;
+		font-size: 32px
       }
 
       paper-spinner {
@@ -26,8 +27,9 @@
         width: 300px;
         margin-left: calc(50vw - 150px);
         text-align: center;
-		--paper-toast-background-color: rgba(253, 193, 43, 0.22);
-        --paper-toast-color: rgba(253, 193, 43, 0.22);
+		font-size: 32px
+		--paper-toast-background-color: rgba(255, 255, 255, 0);
+        --paper-toast-color: rgba(255, 255, 255, 1);
       }
 
     </style>
@@ -40,14 +42,9 @@
 
     <paper-spinner active$="{{!ready}}"></paper-spinner>
     <paper-toast id="toast" vertical-align="top" duration="5000"></paper-toast>
-    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autostart="false" ></audio>
+    
   </template>
-<script>
-  function playSound() {
-          var sound = document.getElementById("audio");
-          sound.play();
-      }
-</script>
+
   <script>
     class ViewDefaultTip extends Polymer.Element {
       static get is() { return 'view-default-tip'; }
@@ -63,7 +60,6 @@
           this.$.toast.text =
               `${e.detail.user.username} tipped ${e.detail.amount} tokens! `;
           this.$.toast.open();
-		  playSound();
         }
       }
     }
