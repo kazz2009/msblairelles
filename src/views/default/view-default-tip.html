@@ -68,7 +68,7 @@
     </chaturbate-controller>
 
     <paper-spinner active$="{{!ready}}"></paper-spinner>
-    <paper-toast type="1" id="toast1" vertical-align="top" duration="2000"></paper-toast>
+    <paper-toast vertical-align horizontal-align type="1" id="toast1" duration="2000"></paper-toast>
 	<paper-toast type="15" id="toast15" vertical-align="top" duration="2000"></paper-toast>
 	<paper-toast type="100" id="toast100" vertical-align="top" duration="4000"></paper-toast>
 	<paper-toast type="500" id="toast500" vertical-align="bottom" duration="5000"></paper-toast>
@@ -90,6 +90,8 @@
         if (e.detail.amount >= 1) {
           this.$.toast1.text =
               `${e.detail.user.username} tipped ${e.detail.amount} tokens! `;
+		  this.$.toast1.center();
+          this.$.toast1.refit();
           this.$.toast1.open();
         }
 		if (e.detail.amount >= 15) {
