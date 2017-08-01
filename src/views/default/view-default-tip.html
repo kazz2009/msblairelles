@@ -9,7 +9,7 @@
       :host {
         display: block;
         padding: 10px;
-		font-size: 32px
+		font-size: 32px;
       }
 
       paper-spinner {
@@ -23,13 +23,40 @@
         --paper-spinner-color: var(--google-red-500);
       }
 
-       paper-toast {
+       paper-toast[type="1"] {
         width: 300px;
         margin-left: calc(50vw - 150px);
         text-align: center;
-		font-size: 32px
-		--paper-toast-background-color: rgba(255, 255, 255, 0);
-        --paper-toast-color: rgba(255, 255, 255, 1);
+		font-size: 32px;
+        --paper-toast-color: rgba(20, 0, 235, 1);
+      }
+	  paper-toast[type="15"] {
+        width: 300px;
+        margin-left: calc(50vw - 150px);
+        text-align: center;
+		font-size: 32px;
+        --paper-toast-color: rgba(235, 0, 145, 1);
+      }
+	  paper-toast[type="100"] {
+        width: 300px;
+        margin-left: calc(50vw - 150px);
+        text-align: center;
+		font-size: 32px;
+        --paper-toast-color: rgba(71, 0, 44, 1);
+      }
+	  paper-toast[type="500"] {
+        width: 300px;
+        margin-left: calc(50vw - 150px);
+        text-align: center;
+		font-size: 32px;
+        --paper-toast-color: rgba(224, 79, 0, 1);
+      }
+	  paper-toast[type="1000"] {
+        width: 300px;
+        margin-left: calc(50vw - 150px);
+        text-align: center;
+		font-size: 32px;
+        --paper-toast-color: rgba(184, 0, 0, 1);
       }
 
     </style>
@@ -41,7 +68,11 @@
     </chaturbate-controller>
 
     <paper-spinner active$="{{!ready}}"></paper-spinner>
-    <paper-toast id="toast" vertical-align="top" duration="5000"></paper-toast>
+    <paper-toast type="1" id="toast1" vertical-align="top" duration="2000"></paper-toast>
+	<paper-toast type="15" id="toast15" vertical-align="top" duration="2000"></paper-toast>
+	<paper-toast type="100" id="toast100" vertical-align="top" duration="4000"></paper-toast>
+	<paper-toast type="500" id="toast500" vertical-align="bottom" duration="5000"></paper-toast>
+	<paper-toast type="1000" id="toast1000" vertical-align="bottom" duration="10000"></paper-toast>
     
   </template>
 
@@ -57,9 +88,29 @@
 
       _handleTip(e) {
         if (e.detail.amount >= 1) {
-          this.$.toast.text =
+          this.$.toast1.text =
               `${e.detail.user.username} tipped ${e.detail.amount} tokens! `;
-          this.$.toast.open();
+          this.$.toast1.open();
+        }
+		if (e.detail.amount >= 15) {
+          this.$.toast15.text =
+              `${e.detail.user.username} tipped ${e.detail.amount} tokens! `;
+          this.$.toast15.open();
+        }
+		if (e.detail.amount >= 100) {
+          this.$.toast100.text =
+              `${e.detail.user.username} tipped ${e.detail.amount} tokens! `;
+          this.$.toast100.open();
+        }
+		if (e.detail.amount >= 500) {
+          this.$.toast500.text =
+              `${e.detail.user.username} tipped ${e.detail.amount} tokens! `;
+          this.$.toast500.open();
+        }
+		if (e.detail.amount >= 1000) {
+          this.$.toast1000.text =
+			  `WOOOOOW !!! ${e.detail.user.username} thank you!!! Your ${e.detail.amount} tokens will be added into my king tippers <3 `;
+          this.$.toast1000.open();
         }
       }
     }
